@@ -20,10 +20,8 @@ tiles.addTo(mymap);
 async function getISS() {
     const response = await fetch(api_url);
     const data = await response.json();
-    //const latitude = data.latitude;
-    const latitude = -34.891529079834186;
-    //const longitude = data.longitude;
-    const longitude = 138.52273558770236;
+    const latitude = data.latitude;
+    const longitude = data.longitude;
 
     marker.setLatLng([latitude, longitude]);
     mymap.setView([latitude, longitude], 5);
@@ -35,5 +33,5 @@ async function getISS() {
     // }
     document.getElementById('lat').textContent = latitude.toFixed(2);
     document.getElementById('lon').textContent = longitude.toFixed(2);
-    //setTimeout(getISS, 1000);
+    setTimeout(getISS, 1000);
 };
