@@ -21,9 +21,9 @@ async function getISS() {
     const response = await fetch(api_url);
     const data = await response.json();
     //const latitude = data.latitude;
-    const latitude = "-34.891529079834186";
+    const latitude = -34.891529079834186;
     //const longitude = data.longitude;
-    const longitude = "138.52273558770236";
+    const longitude = 138.52273558770236;
 
     marker.setLatLng([latitude, longitude]);
     mymap.setView([latitude, longitude], 5);
