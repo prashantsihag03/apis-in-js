@@ -1,6 +1,6 @@
 const api_url = "https://api.wheretheiss.at/v1/satellites/25544";
 
-var mymap = L.map('issMap').setView([0, 0], 2);
+var mymap = L.map('issMap').setView([0, 0], 5);
 
 var myIcon = L.icon({
     iconUrl: 'iss200.png',
@@ -21,12 +21,12 @@ async function getISS() {
     const response = await fetch(api_url);
     const data = await response.json();
     //const latitude = data.latitude;
-    const latitude = -34.89152908132704;
+    const latitude = "-34.891529079834186";
     //const longitude = data.longitude;
-    const longitude = 138.52273558770236;
+    const longitude = "138.52273558770236";
 
     marker.setLatLng([latitude, longitude]);
-    mymap.setView([latitude, longitude], 2);
+    mymap.setView([latitude, longitude], 5);
 
     // below code for not moving map every time to center the marker
     // if (firsttime) {
@@ -35,5 +35,5 @@ async function getISS() {
     // }
     document.getElementById('lat').textContent = latitude.toFixed(2);
     document.getElementById('lon').textContent = longitude.toFixed(2);
-    setTimeout(getISS, 1000);
+    //setTimeout(getISS, 1000);
 };
