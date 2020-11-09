@@ -1,7 +1,7 @@
 async function getdata() {
     const xs = [],
         ys = [];
-    const response = await fetch('ZonAnn.Ts+dSST.csv');
+    const response = await fetch('../tempChart/ZonAnn.Ts+dSST.csv');
     const data = await response.text();
     const table = data.split('\n').slice(1);
     table.forEach(row => {
