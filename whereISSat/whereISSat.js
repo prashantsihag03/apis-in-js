@@ -1,6 +1,6 @@
 const api_url = "https://api.wheretheiss.at/v1/satellites/25544";
 
-var mymap = L.map('issMap').setView([0, 0], 5);
+var mymap = L.map('issMap').setView([0, 0], 15);
 
 var myIcon = L.icon({
     iconUrl: 'iss200.png',
@@ -24,7 +24,7 @@ async function getISS() {
     const longitude = data.longitude;
 
     marker.setLatLng([latitude, longitude]);
-    mymap.setView([latitude, longitude], 5);
+    mymap.setView([latitude, longitude], 15);
 
     // below code for not moving map every time to center the marker
     // if (firsttime) {
